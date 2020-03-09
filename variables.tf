@@ -217,6 +217,19 @@ variable "health_check_matcher" {
   description = "The HTTP response codes to indicate a healthy check"
 }
 
+variable "health_check_port" {
+  type        = number
+  default     = 0
+  description = "The port to use to connect with the target. Valid values are either ports 1-65535, or traffic-port. Defaults to traffic-port."
+}
+
+
+variable "health_check_protocol" {
+  type        = string
+  default     = "HTTP"
+  description = "The protocol to use to connect with the target. Defaults to HTTP. Not applicable when target_group_target_type is lambda"
+}
+
 variable "alb_access_logs_s3_bucket_force_destroy" {
   type        = bool
   default     = false

@@ -17,6 +17,8 @@
 | health_check_interval | The duration in seconds in between health checks | number | `15` | no |
 | health_check_matcher | The HTTP response codes to indicate a healthy check | string | `200-399` | no |
 | health_check_path | The destination for the health check request | string | `/` | no |
+| health_check_port | The port to use to connect with the target. Valid values are either ports 1-65535, or traffic-port. Value of `0` would default to traffic-port | number | `0` | no |
+| health_check_protocol | The protocol to use to connect with the target. Defaults to HTTP. Not applicable when target_group_target_type is lambda | string | `HTTP` | no |
 | health_check_timeout | The amount of time to wait in seconds before failing a health check request | number | `10` | no |
 | health_check_unhealthy_threshold | The number of consecutive health check failures required before considering the target unhealthy | number | `2` | no |
 | http2_enabled | A boolean flag to enable/disable HTTP/2 | bool | `true` | no |

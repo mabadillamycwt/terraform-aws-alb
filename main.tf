@@ -111,6 +111,8 @@ resource "aws_lb_target_group" "default" {
     unhealthy_threshold = var.health_check_unhealthy_threshold
     interval            = var.health_check_interval
     matcher             = var.health_check_matcher
+    protocol            = var.health_check_protocol
+    port                = var.health_check_port == 0 ? null : var.health_check_port
   }
 
   lifecycle {
