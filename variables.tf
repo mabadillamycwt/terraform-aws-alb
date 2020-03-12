@@ -242,6 +242,12 @@ variable "target_group_port" {
   description = "The port for the default target group"
 }
 
+variable "target_group_protocol" {
+  type        = string
+  default     = "HTTP"
+  description = "The port on which targets receive traffic, unless overridden when registering a specific target. Required when target_group_target_type is instance or ip. Does not apply when target_group_target_type is lambda."
+}
+
 variable "target_group_name" {
   type        = string
   default     = ""
